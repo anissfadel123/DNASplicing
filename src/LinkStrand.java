@@ -4,7 +4,6 @@
  * Assignment 6: DNA Splicing
  * http://nifty.stanford.edu/2009/astrachan-dna/
  *------------------------------------------------------------------------------*/
-
 public class LinkStrand implements IDnaStrand{
     private Node myFirst, myLast;
     private long mySize;
@@ -59,11 +58,9 @@ public class LinkStrand implements IDnaStrand{
 
     @Override
     public IDnaStrand cutAndSplice(String enzyme, String splicee) {
-
         if(myFirst.next != null){
             throw new RuntimeException("link strand has more than one node");
         }
-
         int pos = 0;
         int lastPos = -1;
         String search = myFirst.info;
@@ -84,17 +81,14 @@ public class LinkStrand implements IDnaStrand{
             lastPos = pos+enzyme.length();
             pos++;
         }
-
         if (lastPos < search.length() && lastPos >= 0) {
             newHeadStrand.append(search.substring(lastPos));
         }
-
         // lastPos = -1 when no enzyme is found.
         if(lastPos == -1){
             newHeadStrand = new LinkStrand("");
         }
         return newHeadStrand;
-
 
     }
 
@@ -114,8 +108,6 @@ public class LinkStrand implements IDnaStrand{
     public String strandInfo() {
         return this.getClass().getName();
     }
-
-
 
     @Override
     public IDnaStrand append(IDnaStrand dna) {
