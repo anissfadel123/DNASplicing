@@ -1,0 +1,123 @@
+The algorithm in SimpleStrand.cutAndSplice is O(N) where N is the size of the recombined strand returned. The reason why
+it is O(N) is because there is only one loop in the method, which generates the recombined strand of size N. The
+algorithm in The LinkStrand.cutAndSplice is O(B) where B is the number of breaks/splits created by the restriction
+enzyme. In this method, when it finds an enzyme in the dna strand it gets cut out of the strand and forms two separate
+nodes. Then a node that represents the 'splicee' links the two nodes.The largest 'splicee' string that SimpleStrand
+generates when the heap size is 512M is 2^17. When the heap size is 512M, the largest 'splicee' LinkStrand generates is
+2^27. When the heap size is 1024M, the largest 'splicee' that SimpleStrand generates is 2^18 and that LinkedStrand
+generates is 2^28. When the heap size is 2048M, the largest 'splicee' that SimpleStrand generates is 2^19 and that
+LinkedStrand generates is 2^29. The data below are what my machine generated:
+
+Heap size = 512M
+
+dna length = 4639221
+SimpleStrand:	 splicee 256	 time 0.067	before 4,639,221	after 4,639,221	recomb 4,800,471
+SimpleStrand:	 splicee 512	 time 0.040	before 4,639,221	after 4,639,221	recomb 4,965,591
+SimpleStrand:	 splicee 1,024	 time 0.030	before 4,639,221	after 4,639,221	recomb 5,295,831
+SimpleStrand:	 splicee 2,048	 time 0.030	before 4,639,221	after 4,639,221	recomb 5,956,311
+SimpleStrand:	 splicee 4,096	 time 0.033	before 4,639,221	after 4,639,221	recomb 7,277,271
+SimpleStrand:	 splicee 8,192	 time 0.036	before 4,639,221	after 4,639,221	recomb 9,919,191
+SimpleStrand:	 splicee 16,384	 time 0.042	before 4,639,221	after 4,639,221	recomb 15,203,031
+SimpleStrand:	 splicee 32,768	 time 0.063	before 4,639,221	after 4,639,221	recomb 25,770,711
+SimpleStrand:	 splicee 65,536	 time 0.149	before 4,639,221	after 4,639,221	recomb 46,906,071
+SimpleStrand:	 splicee 131,072	 time 0.170	before 4,639,221	after 4,639,221	recomb 89,176,791
+
+dna length = 4639221
+LinkStrand:	 splicee 256	 time 0.024	before 4,639,221	after 4,639,221	recomb 4,800,471
+LinkStrand:	 splicee 512	 time 0.027	before 4,639,221	after 4,639,221	recomb 4,965,591
+LinkStrand:	 splicee 1,024	 time 0.021	before 4,639,221	after 4,639,221	recomb 5,295,831
+LinkStrand:	 splicee 2,048	 time 0.023	before 4,639,221	after 4,639,221	recomb 5,956,311
+LinkStrand:	 splicee 4,096	 time 0.023	before 4,639,221	after 4,639,221	recomb 7,277,271
+LinkStrand:	 splicee 8,192	 time 0.021	before 4,639,221	after 4,639,221	recomb 9,919,191
+LinkStrand:	 splicee 16,384	 time 0.022	before 4,639,221	after 4,639,221	recomb 15,203,031
+LinkStrand:	 splicee 32,768	 time 0.022	before 4,639,221	after 4,639,221	recomb 25,770,711
+LinkStrand:	 splicee 65,536	 time 0.010	before 4,639,221	after 4,639,221	recomb 46,906,071
+LinkStrand:	 splicee 131,072	 time 0.003	before 4,639,221	after 4,639,221	recomb 89,176,791
+LinkStrand:	 splicee 262,144	 time 0.003	before 4,639,221	after 4,639,221	recomb 173,718,231
+LinkStrand:	 splicee 524,288	 time 0.003	before 4,639,221	after 4,639,221	recomb 342,801,111
+LinkStrand:	 splicee 1,048,576	 time 0.002	before 4,639,221	after 4,639,221	recomb 680,966,871
+LinkStrand:	 splicee 2,097,152	 time 0.003	before 4,639,221	after 4,639,221	recomb 1,357,298,391
+LinkStrand:	 splicee 4,194,304	 time 0.006	before 4,639,221	after 4,639,221	recomb 2,709,961,431
+LinkStrand:	 splicee 8,388,608	 time 0.002	before 4,639,221	after 4,639,221	recomb 5,415,287,511
+LinkStrand:	 splicee 16,777,216	 time 0.002	before 4,639,221	after 4,639,221	recomb 10,825,939,671
+LinkStrand:	 splicee 33,554,432	 time 0.002	before 4,639,221	after 4,639,221	recomb 21,647,243,991
+LinkStrand:	 splicee 67,108,864	 time 0.002	before 4,639,221	after 4,639,221	recomb 43,289,852,631
+LinkStrand:	 splicee 134,217,728	 time 0.003	before 4,639,221	after 4,639,221	recomb 86,575,069,911
+---------------------------------------------------------------------------------------------------------
+Heap size = 1024M
+
+dna length = 4639221
+SimpleStrand:	 splicee 256	 time 0.074	before 4,639,221	after 4,639,221	recomb 4,800,471
+SimpleStrand:	 splicee 512	 time 0.031	before 4,639,221	after 4,639,221	recomb 4,965,591
+SimpleStrand:	 splicee 1,024	 time 0.030	before 4,639,221	after 4,639,221	recomb 5,295,831
+SimpleStrand:	 splicee 2,048	 time 0.033	before 4,639,221	after 4,639,221	recomb 5,956,311
+SimpleStrand:	 splicee 4,096	 time 0.034	before 4,639,221	after 4,639,221	recomb 7,277,271
+SimpleStrand:	 splicee 8,192	 time 0.036	before 4,639,221	after 4,639,221	recomb 9,919,191
+SimpleStrand:	 splicee 16,384	 time 0.042	before 4,639,221	after 4,639,221	recomb 15,203,031
+SimpleStrand:	 splicee 32,768	 time 0.063	before 4,639,221	after 4,639,221	recomb 25,770,711
+SimpleStrand:	 splicee 65,536	 time 0.152	before 4,639,221	after 4,639,221	recomb 46,906,071
+SimpleStrand:	 splicee 131,072	 time 0.157	before 4,639,221	after 4,639,221	recomb 89,176,791
+SimpleStrand:	 splicee 262,144	 time 0.393	before 4,639,221	after 4,639,221	recomb 173,718,231
+
+dna length = 4639221
+LinkStrand:	 splicee 256	 time 0.024	before 4,639,221	after 4,639,221	recomb 4,800,471
+LinkStrand:	 splicee 512	 time 0.022	before 4,639,221	after 4,639,221	recomb 4,965,591
+LinkStrand:	 splicee 1,024	 time 0.021	before 4,639,221	after 4,639,221	recomb 5,295,831
+LinkStrand:	 splicee 2,048	 time 0.023	before 4,639,221	after 4,639,221	recomb 5,956,311
+LinkStrand:	 splicee 4,096	 time 0.025	before 4,639,221	after 4,639,221	recomb 7,277,271
+LinkStrand:	 splicee 8,192	 time 0.023	before 4,639,221	after 4,639,221	recomb 9,919,191
+LinkStrand:	 splicee 16,384	 time 0.022	before 4,639,221	after 4,639,221	recomb 15,203,031
+LinkStrand:	 splicee 32,768	 time 0.024	before 4,639,221	after 4,639,221	recomb 25,770,711
+LinkStrand:	 splicee 65,536	 time 0.017	before 4,639,221	after 4,639,221	recomb 46,906,071
+LinkStrand:	 splicee 131,072	 time 0.003	before 4,639,221	after 4,639,221	recomb 89,176,791
+LinkStrand:	 splicee 262,144	 time 0.002	before 4,639,221	after 4,639,221	recomb 173,718,231
+LinkStrand:	 splicee 524,288	 time 0.003	before 4,639,221	after 4,639,221	recomb 342,801,111
+LinkStrand:	 splicee 1,048,576	 time 0.005	before 4,639,221	after 4,639,221	recomb 680,966,871
+LinkStrand:	 splicee 2,097,152	 time 0.003	before 4,639,221	after 4,639,221	recomb 1,357,298,391
+LinkStrand:	 splicee 4,194,304	 time 0.002	before 4,639,221	after 4,639,221	recomb 2,709,961,431
+LinkStrand:	 splicee 8,388,608	 time 0.003	before 4,639,221	after 4,639,221	recomb 5,415,287,511
+LinkStrand:	 splicee 16,777,216	 time 0.002	before 4,639,221	after 4,639,221	recomb 10,825,939,671
+LinkStrand:	 splicee 33,554,432	 time 0.006	before 4,639,221	after 4,639,221	recomb 21,647,243,991
+LinkStrand:	 splicee 67,108,864	 time 0.004	before 4,639,221	after 4,639,221	recomb 43,289,852,631
+LinkStrand:	 splicee 134,217,728	 time 0.005	before 4,639,221	after 4,639,221	recomb 86,575,069,911
+LinkStrand:	 splicee 268,435,456	 time 0.005	before 4,639,221	after 4,639,221	recomb 173,145,504,471
+---------------------------------------------------------------------------------------------------------
+Heap size = 2048M
+
+dna length = 4639221
+SimpleStrand:	 splicee 256	 time 0.082	before 4,639,221	after 4,639,221	recomb 4,800,471
+SimpleStrand:	 splicee 512	 time 0.046	before 4,639,221	after 4,639,221	recomb 4,965,591
+SimpleStrand:	 splicee 1,024	 time 0.037	before 4,639,221	after 4,639,221	recomb 5,295,831
+SimpleStrand:	 splicee 2,048	 time 0.048	before 4,639,221	after 4,639,221	recomb 5,956,311
+SimpleStrand:	 splicee 4,096	 time 0.038	before 4,639,221	after 4,639,221	recomb 7,277,271
+SimpleStrand:	 splicee 8,192	 time 0.041	before 4,639,221	after 4,639,221	recomb 9,919,191
+SimpleStrand:	 splicee 16,384	 time 0.041	before 4,639,221	after 4,639,221	recomb 15,203,031
+SimpleStrand:	 splicee 32,768	 time 0.063	before 4,639,221	after 4,639,221	recomb 25,770,711
+SimpleStrand:	 splicee 65,536	 time 0.149	before 4,639,221	after 4,639,221	recomb 46,906,071
+SimpleStrand:	 splicee 131,072	 time 0.159	before 4,639,221	after 4,639,221	recomb 89,176,791
+SimpleStrand:	 splicee 262,144	 time 0.410	before 4,639,221	after 4,639,221	recomb 173,718,231
+SimpleStrand:	 splicee 524,288	 time 1.311	before 4,639,221	after 4,639,221	recomb 342,801,111
+
+dna length = 4639221
+LinkStrand:	 splicee 256	 time 0.023	before 4,639,221	after 4,639,221	recomb 4,800,471
+LinkStrand:	 splicee 512	 time 0.023	before 4,639,221	after 4,639,221	recomb 4,965,591
+LinkStrand:	 splicee 1,024	 time 0.023	before 4,639,221	after 4,639,221	recomb 5,295,831
+LinkStrand:	 splicee 2,048	 time 0.021	before 4,639,221	after 4,639,221	recomb 5,956,311
+LinkStrand:	 splicee 4,096	 time 0.029	before 4,639,221	after 4,639,221	recomb 7,277,271
+LinkStrand:	 splicee 8,192	 time 0.026	before 4,639,221	after 4,639,221	recomb 9,919,191
+LinkStrand:	 splicee 16,384	 time 0.029	before 4,639,221	after 4,639,221	recomb 15,203,031
+LinkStrand:	 splicee 32,768	 time 0.026	before 4,639,221	after 4,639,221	recomb 25,770,711
+LinkStrand:	 splicee 65,536	 time 0.009	before 4,639,221	after 4,639,221	recomb 46,906,071
+LinkStrand:	 splicee 131,072	 time 0.002	before 4,639,221	after 4,639,221	recomb 89,176,791
+LinkStrand:	 splicee 262,144	 time 0.002	before 4,639,221	after 4,639,221	recomb 173,718,231
+LinkStrand:	 splicee 524,288	 time 0.003	before 4,639,221	after 4,639,221	recomb 342,801,111
+LinkStrand:	 splicee 1,048,576	 time 0.003	before 4,639,221	after 4,639,221	recomb 680,966,871
+LinkStrand:	 splicee 2,097,152	 time 0.003	before 4,639,221	after 4,639,221	recomb 1,357,298,391
+LinkStrand:	 splicee 4,194,304	 time 0.002	before 4,639,221	after 4,639,221	recomb 2,709,961,431
+LinkStrand:	 splicee 8,388,608	 time 0.003	before 4,639,221	after 4,639,221	recomb 5,415,287,511
+LinkStrand:	 splicee 16,777,216	 time 0.002	before 4,639,221	after 4,639,221	recomb 10,825,939,671
+LinkStrand:	 splicee 33,554,432	 time 0.006	before 4,639,221	after 4,639,221	recomb 21,647,243,991
+LinkStrand:	 splicee 67,108,864	 time 0.004	before 4,639,221	after 4,639,221	recomb 43,289,852,631
+LinkStrand:	 splicee 134,217,728	 time 0.005	before 4,639,221	after 4,639,221	recomb 86,575,069,911
+LinkStrand:	 splicee 268,435,456	 time 0.004	before 4,639,221	after 4,639,221	recomb 173,145,504,471
+LinkStrand:	 splicee 536,870,912	 time 0.004	before 4,639,221	after 4,639,221	recomb 346,286,373,591
